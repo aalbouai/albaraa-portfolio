@@ -1,0 +1,18 @@
+:root{
+  --accent:#0b5cff;
+  --muted:#666;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; background:#f7f9fc; color:#111}
+.container{max-width:900px; margin:24px auto; padding:16px}
+header.nav{background:white; padding:12px 16px; box-shadow:0 2px 6px rgba(0,0,0,0.06); display:flex; align-items:center; gap:12px}
+.logo{display:flex; align-items:center; gap:8px; text-decoration:none; color:inherit}
+nav a{margin-left:12px; text-decoration:none; color:var(--muted)}
+nav a.active{color:var(--accent); font-weight:600}
+.hero{background:white; padding:28px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.04)}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px}
+.card{background:white; padding:16px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+form label{display:block; margin-top:8px; font-size:14px}
+input, textarea{width:100%; padding:8px; margin-top:6px; border-radius:6px; border:1px solid #ddd}
+button{background:var(--accent); color:white; padding:10px 14px; border:none; border-radius:8px; cursor:pointer; margin-top:10px}
+footer{padding:20px; text-align:center; color:var(--muted); margin-top:18px}
