@@ -13,12 +13,10 @@ export default defineConfig({
     }
   },
   build: {
-    // Production optimizations
-    minify: 'esbuild', // Use esbuild instead of terser (built into Vite)
+    // Production optimizations - code splitting for better caching
     rollupOptions: {
       output: {
         manualChunks: {
-          // Split vendor chunks for better caching
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'icons': ['react-icons'],
         },
