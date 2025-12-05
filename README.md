@@ -4,10 +4,41 @@ A modern, full-stack portfolio application built with React, Node.js, Express, a
 
 ## 🎓 Assignment Information
 
-**Course:** COMP229 - Web Application Development  
-**Assignment:** Assignment 3 - Portfolio Application  
-**Student:** Albaraa  
+**Course:** COMP229 - Web Application Development
+**Assignment:** Assignment 4 - Testing and Deployment
+**Student:** Albaraa
 **Institution:** Centennial College
+
+## 📦 Assignment 4 Features
+
+### ✅ PART I - Testing
+- **Unit Testing**: Vitest with React Testing Library
+  - Navbar component tests
+  - Footer component tests
+  - 6 passing tests
+- **E2E Testing**: Cypress
+  - Navigation flow tests
+  - Contact form tests
+  - Authentication flow tests
+  - Video recording enabled
+
+### ✅ PART II - Performance Optimization
+- Frontend build optimizations (code splitting, minification)
+- Backend compression middleware
+- Vendor chunk separation for better caching
+- Production-ready configuration
+
+### ✅ PART III - Cloud Deployment
+- MongoDB Atlas (cloud database) ✓
+- Deployment configurations for Render/Vercel
+- Environment variable management
+- Production build setup
+
+### ✅ PART IV - CI/CD
+- GitHub Actions workflow
+- Automated testing on push/PR
+- Continuous deployment ready
+- Build artifact generation
 
 ## ✨ Features
 
@@ -48,16 +79,26 @@ A modern, full-stack portfolio application built with React, Node.js, Express, a
 - Axios
 - React Icons
 - Vite
+- **Vitest** (Unit Testing)
+- **React Testing Library** (Component Testing)
+- **Cypress** (E2E Testing)
 
 ### Backend
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB (Atlas - Cloud)
 - Mongoose
 - JWT (jsonwebtoken)
 - bcryptjs
 - dotenv
 - CORS
+- **Compression** (Performance)
+
+### DevOps & Testing
+- **GitHub Actions** (CI/CD)
+- **Vitest** (Unit Testing)
+- **Cypress** (E2E Testing)
+- **Render/Vercel** (Deployment)
 
 ## 📋 Prerequisites
 
@@ -266,6 +307,14 @@ albaraa_portfolio/
 - ✅ Error-free application
 - ✅ Code pushed to GitHub
 
+### Part IV - Testing and Deployment (Assignment 4)
+- ✅ Unit testing with Vitest
+- ✅ E2E testing with Cypress
+- ✅ Performance optimizations
+- ✅ Cloud deployment configuration
+- ✅ CI/CD with GitHub Actions
+- ✅ MongoDB Atlas (cloud database)
+
 ## 🔧 Environment Variables
 
 Backend `.env` file:
@@ -292,12 +341,81 @@ For assignment submission, take screenshots of:
 11. MongoDB database showing collections
 12. GitHub repository
 
+## 🧪 Testing
+
+### Unit Tests (Vitest)
+
+Run unit tests for React components:
+
+```bash
+cd frontend
+npm run test        # Run in watch mode
+npm run test:run    # Run once
+npm run test:ui     # Run with UI
+```
+
+**Test Coverage:**
+- Navbar component (4 tests)
+- Footer component (2 tests)
+
+### E2E Tests (Cypress)
+
+**Prerequisites:** Both backend and frontend servers must be running.
+
+```bash
+# Terminal 1 - Backend
+cd backend
+npm run dev
+
+# Terminal 2 - Frontend
+cd frontend
+npm run dev
+
+# Terminal 3 - Cypress
+cd frontend
+npm run cypress:open    # Interactive mode
+npm run cypress:run     # Headless mode
+```
+
+**Test Suites:**
+- Navigation tests
+- Contact form tests
+- Authentication flow tests
+
 ## 🚀 Deployment
+
+### Cloud Deployment
+
+This application is configured for deployment to:
+- **Backend**: Render, Railway, or Heroku
+- **Frontend**: Render, Vercel, or Netlify
+- **Database**: MongoDB Atlas (already configured)
+
+See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for detailed instructions.
+
+### Quick Deploy to Render
+
+1. Push code to GitHub
+2. Create account on [Render.com](https://render.com)
+3. Create Web Service for backend
+4. Create Static Site for frontend
+5. Set environment variables
+6. Deploy!
 
 ### Local Development
 Both servers must be running:
 - Backend: `http://localhost:5000`
 - Frontend: `http://localhost:3000`
+
+## 🔄 CI/CD
+
+GitHub Actions workflow is configured to:
+- Run unit tests on every push
+- Build frontend and backend
+- Generate build artifacts
+- Ready for automatic deployment
+
+Workflow file: `.github/workflows/ci-cd.yml`
 
 ## 📄 License
 

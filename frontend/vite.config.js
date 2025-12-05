@@ -11,6 +11,31 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  build: {
+    // Production optimizations
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.logs in production
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor chunks for better caching
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'icons': ['react-icons'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.js',
+    css: true,
   }
 })
 
